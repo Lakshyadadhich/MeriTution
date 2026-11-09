@@ -16,7 +16,7 @@ async function start() {
   }
 
   app.listen(config.port, () => {
-    console.log(`Tuition Manager API listening on http://localhost:${config.port}`);
+    console.log(`Sharma Tuition Classes API listening on http://localhost:${config.port}`);
     console.log(`Environment: ${config.env}`);
   });
 }

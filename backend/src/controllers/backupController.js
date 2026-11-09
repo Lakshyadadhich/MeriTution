@@ -26,7 +26,7 @@ export const exportBackup = asyncHandler(async (_req, res) => {
   const payload = {
     version: 1,
     exportedAt: new Date().toISOString(),
-    exportedBy: "tuition-manager",
+    exportedBy: "sharma-tuition-classes",
     data: {
       students,
       batches,
@@ -42,7 +42,7 @@ export const exportBackup = asyncHandler(async (_req, res) => {
   res.setHeader("Content-Type", "application/json");
   res.setHeader(
     "Content-Disposition",
-    `attachment; filename="tuition-backup-${todayInTz()}.json"`
+    `attachment; filename="sharma-tuition-backup-${todayInTz()}.json"`
   );
   res.send(JSON.stringify(payload, null, 2));
 });

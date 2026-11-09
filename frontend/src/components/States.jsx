@@ -41,7 +41,7 @@ export function LoadingScreen() {
     <div className="flex min-h-screen items-center justify-center bg-slate-50">
       <div className="flex flex-col items-center gap-3 text-slate-500">
         <Spinner className="h-8 w-8 text-brand-600" />
-        <p className="text-sm font-medium">Loading Tuition Manager…</p>
+        <p className="text-sm font-medium">Loading Sharma Tuition Classes…</p>
       </div>
     </div>
   );

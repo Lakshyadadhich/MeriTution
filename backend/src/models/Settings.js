@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const settingsSchema = new mongoose.Schema(
   {
-    tuitionName: { type: String, default: "My Tuition Classes", trim: true },
+    tuitionName: { type: String, default: "Sharma Tuition Classes", trim: true },
     currency: { type: String, default: "INR", enum: ["INR"] },
     timezone: { type: String, default: "Asia/Kolkata" },
     academicYear: { type: String, required: true },

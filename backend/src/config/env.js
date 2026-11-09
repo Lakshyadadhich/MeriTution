@@ -15,7 +15,7 @@ const config = {
   clientOrigin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
   timezone: process.env.TIMEZONE || "Asia/Kolkata",
   admin: {
-    name: process.env.ADMIN_NAME || "Tuition Administrator",
+    name: process.env.ADMIN_NAME || "Sharma Tuition Administrator",
     email: (process.env.ADMIN_EMAIL || "admin@example.com").toLowerCase(),
     password: process.env.ADMIN_PASSWORD || "",
   },

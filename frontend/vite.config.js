@@ -10,9 +10,9 @@ export default defineConfig({
       injectRegister: "auto",
       includeAssets: ["favicon.svg", "icons/apple-touch-icon.png"],
       manifest: {
-        name: "Tuition Manager",
-        short_name: "Tuition",
-        description: "Private tuition administration: students, fees and attendance.",
+        name: "Sharma Tuition Classes",
+        short_name: "Sharma Tuition",
+        description: "Sharma Tuition Classes: students, fees and attendance.",
         theme_color: "#0f766e",
         background_color: "#f8fafc",
         display: "standalone",

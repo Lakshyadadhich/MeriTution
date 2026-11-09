@@ -226,7 +226,7 @@ export default function MorePage() {
             <InfoIcon className="h-4 w-4" />
           </span>
           <div className="text-xs text-slate-500">
-            <p className="text-sm font-semibold text-slate-800">Tuition Manager</p>
+            <p className="text-sm font-semibold text-slate-800">Sharma Tuition Classes</p>
             <p className="mt-0.5">
               Version 1.0 · INR · Asia/Kolkata · installable PWA. Data is stored in your
               own MongoDB Atlas database.

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import BrandMark from "../components/BrandMark.jsx";
 import Button from "../components/Button.jsx";
 import { Field, TextInput } from "../components/Field.jsx";
 import { AlertIcon } from "../components/Icons.jsx";
@@ -35,10 +36,10 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-brand-50 via-slate-50 to-slate-100 px-4 py-10">
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
-          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-brand-700 text-xl font-bold text-white shadow-lg shadow-brand-200">
-            TM
-          </div>
-          <h1 className="mt-4 text-2xl font-bold text-slate-900">Tuition Manager</h1>
+          <BrandMark className="mx-auto h-16 w-16 drop-shadow-md" />
+          <h1 className="mt-4 text-2xl font-bold leading-tight text-slate-900">
+            Sharma Tuition Classes
+          </h1>
           <p className="mt-1 text-sm text-slate-500">
             Sign in to manage students, fees and attendance.
           </p>

@@ -9,7 +9,7 @@ import { feesReport } from "./reportService.js";
 
 function newWorkbook() {
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = "Tuition Manager";
+  workbook.creator = "Sharma Tuition Classes";
   workbook.created = new Date();
   return workbook;
 }

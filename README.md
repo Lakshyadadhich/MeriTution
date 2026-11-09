@@ -1,6 +1,6 @@
-# Tuition Manager
+# Sharma Tuition Classes
 
-A private, mobile-first tuition administration app for a single administrator. It covers student records, batches, monthly fees, payments and daily attendance, with Excel exports and a full JSON backup.
+A private, mobile-first tuition administration app for Sharma Tuition Classes. It covers student records, batches, monthly fees, payments and daily attendance, with Excel exports and a full JSON backup.
 
 - **Frontend:** React 18, Vite 5, Tailwind CSS 3, installable PWA
 - **Backend:** Node.js 20, Express 4, Mongoose 8, MongoDB Atlas
@@ -31,7 +31,7 @@ npm install
 Edit `backend/.env` and set at least:
 
 ```ini
-MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>/tuition?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>/tuition_manager?retryWrites=true&w=majority
 JWT_SECRET=<a long random string>
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=ChangeMe@123
@@ -48,7 +48,7 @@ All variables:
 | `JWT_EXPIRES_IN` | Session lifetime | `7d` |
 | `COOKIE_SECURE` | Set `true` behind HTTPS | `false` |
 | `CLIENT_ORIGIN` | Allowed frontend origin(s), comma separated | `http://localhost:5173` |
-| `ADMIN_NAME` | First admin display name | `Tuition Administrator` |
+| `ADMIN_NAME` | First admin display name | `Sharma Tuition Administrator` |
 | `ADMIN_EMAIL` | First admin email | `admin@example.com` |
 | `ADMIN_PASSWORD` | First admin password | — |
 | `TIMEZONE` | Reporting timezone | `Asia/Kolkata` |
@@ -145,7 +145,7 @@ The acceptance suite uses `mongodb-memory-server`, so no Atlas connection is nee
 
 ```powershell
 cd backend
-npm run restore -- path\to\tuition-backup.json
+npm run restore -- path\to\sharma-tuition-backup.json
 ```
 
 Add `--drop` to clear existing collections first.

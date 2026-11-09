@@ -1,4 +1,5 @@
 import { NavLink, Outlet, useLocation } from "react-router-dom";
+import BrandMark from "../components/BrandMark.jsx";
 import {
   CheckSquareIcon,
   HomeIcon,
@@ -25,12 +26,10 @@ export default function AppLayout() {
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4">
           <div className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-700 text-sm font-bold text-white">
-              TM
-            </div>
+            <BrandMark className="h-9 w-9" />
             <div>
               <p className="text-sm font-bold leading-tight text-slate-900">
-                Tuition Manager
+                Sharma Tuition Classes
               </p>
               <p className="text-[11px] leading-tight text-slate-500">
                 Fees, students & attendance
