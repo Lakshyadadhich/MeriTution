@@ -8,6 +8,7 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import config from "./config/env.js";
+import { ensureReady } from "./config/ready.js";
 import { errorHandler, notFound } from "./middleware/errorHandler.js";
 import attendanceRoutes from "./routes/attendance.js";
 import authRoutes from "./routes/auth.js";
@@ -40,6 +41,15 @@ if (config.env !== "test") app.use(morgan("dev"));
 
 app.get("/api/health", (_req, res) => {
   res.json({ status: "ok", time: new Date().toISOString() });
+});
+
+app.use("/api", async (_req, _res, next) => {
+  try {
+    await ensureReady();
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
 
 app.use("/api/auth", authRoutes);

@@ -7,6 +7,11 @@ export async function connectDatabase(uri = config.mongoUri) {
       "MONGODB_URI is not set. Add your MongoDB Atlas connection string to backend/.env"
     );
   }
+  if (mongoose.connection.readyState === 1) return mongoose.connection;
+  if (mongoose.connection.readyState === 2) {
+    await mongoose.connection.asPromise();
+    return mongoose.connection;
+  }
   mongoose.set("strictQuery", true);
   await mongoose.connect(uri, { serverSelectionTimeoutMS: 15000 });
   return mongoose.connection;

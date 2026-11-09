@@ -100,6 +100,26 @@ npm start
 
 Open `http://localhost:5000`. For deployment, set `COOKIE_SECURE=true`, `CLIENT_ORIGIN` to the public URL, a strong `JWT_SECRET`, and serve over HTTPS.
 
+## Deploy on Vercel (Services)
+
+`vercel.json` deploys the repository as one Vercel project with two services:
+
+| Service | Root | Public path | Framework |
+| --- | --- | --- | --- |
+| `frontend` | `frontend/` | `/` | Vite |
+| `backend` | `backend/` | `/api/*` | Express |
+
+The backend is public only under `/api`. The SPA calls that same-origin path, so no service binding is used: bindings inject URLs into server-side runtime code, not into a static browser build. The Express service exports the app for Vercel and connects to MongoDB (and creates the admin when the users collection is empty) on the first API request.
+
+Vercel project settings:
+
+- Leave the root directory at the repository root; Vercel reads `vercel.json` and builds both services.
+- Add these environment variables: `MONGODB_URI`, `JWT_SECRET`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `COOKIE_SECURE=true`, `CLIENT_ORIGIN=https://<your-project>.vercel.app`, and optionally `TIMEZONE`.
+- Do not set `VITE_API_URL`; `frontend/.env.production` builds the app against the same-origin `/api` path.
+- In MongoDB Atlas, allow Vercel's egress (for example `0.0.0.0/0`, or Vercel Secure Compute static IPs), because Vercel Function IPs are not fixed.
+
+Run both services locally with `vercel dev` from the repository root.
+
 ## Features
 
 - **Dashboard:** active students, today's attendance, monthly collection, outstanding fees, pending fees, recent students.
